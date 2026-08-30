@@ -1,4 +1,0 @@
-/* Fonts: no binaries were provided with the brief. Loaded from Google Fonts.
-   Display: Space Grotesk (600 for all headlines). Body/UI: Inter (400/500). */
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
-:root{--font-display:"Space Grotesk","Helvetica Neue",Arial,sans-serif;--font-body:"Inter","Helvetica Neue",Arial,sans-serif;--font-mono:"JetBrains Mono",ui-monospace,monospace}
