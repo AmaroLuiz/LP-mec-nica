@@ -1,17 +1,20 @@
 (() => {
   "use strict";
 
-  // TODO: substituir pelo número real de WhatsApp da oficina (formato 55DDDNUMERO, só dígitos)
-  const WA_NUMBER = "5511999999999";
+  const WA_NUMBER = "5544920011084";
   const WA_MSG = "Olá! Gostaria de agendar um serviço para meu veículo. Como posso verificar os horários disponíveis?";
 
   function waLink(message) {
     return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(message);
   }
 
-  // Aplica o link padrão do WhatsApp a todo botão/âncora marcado com .wa-cta
+  // Aplica o link do WhatsApp a todo botão/âncora marcado com .wa-cta — usa a
+  // mensagem personalizada em data-wa-msg quando o elemento tiver uma (ex.:
+  // cada card do catálogo referencia sua própria categoria de peça), e cai
+  // para a mensagem genérica de agendamento nos demais (nav, hero, rodapé etc.).
   document.querySelectorAll(".wa-cta").forEach((el) => {
-    el.setAttribute("href", waLink(WA_MSG));
+    const msg = el.getAttribute("data-wa-msg") || WA_MSG;
+    el.setAttribute("href", waLink(msg));
   });
 
   // ---------- Header: muda de aparência ao rolar ----------
